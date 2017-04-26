@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app3" />
             <option value="$PROJECT_DIR$/calljava" />
             <option value="$PROJECT_DIR$/encode" />
+            <option value="$PROJECT_DIR$/image" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
