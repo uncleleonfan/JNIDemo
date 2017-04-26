@@ -12,9 +12,10 @@ void encode(char *cstr, int size) {
     }
 }
 
+/**
+ *  加密
+ */
 jstring  Java_com_leon_encode_MainActivity_encode(JNIEnv * env, jobject obj, jstring jstr) {
-    //加密
-
     //字符串长度
     jsize length =  (*env)->GetStringLength(env, jstr);
     //将jstring转换成char *
@@ -25,6 +26,8 @@ jstring  Java_com_leon_encode_MainActivity_encode(JNIEnv * env, jobject obj, jst
     encode(cstr, length);
     //返回加密结果
     jstring result = (*env)->NewStringUTF(env, cstr);
+    free(cstr);
+    cstr = NULL;
     return result;
 }
 
@@ -41,6 +44,8 @@ jstring  Java_com_leon_encode_MainActivity_decode(JNIEnv * env, jobject obj, jst
     encode(cstr, length);
     //返回加密结果
     jstring result = (*env)->NewStringUTF(env, cstr);
+    free(cstr);
+    cstr = NULL;
     return result;
 }
 
